@@ -1,0 +1,79 @@
+<div class="container">
+  <!-- Principal Form -->
+  <form
+    (ngSubmit)="principalForm.id ? updatePrincipal() : createPrincipal()"
+    class="principal-form"
+  >
+    <input
+      [(ngModel)]="principalForm.name"
+      name="name"
+      placeholder="Principal Name"
+      required
+      class="input-field"
+    />
+    <input
+      [(ngModel)]="principalForm.age"
+      name="age"
+      type="number"
+      placeholder="Age"
+      required
+      class="input-field"
+    />
+    <input
+      [(ngModel)]="principalForm.experience"
+      name="experience"
+      type="number"
+      placeholder="Years of Experience"
+      required
+      class="input-field"
+    />
+
+    <button class="primary-button" type="submit">
+      {{ principalForm.id ? "Update" : "Add" }} Principal
+    </button>
+
+    <button
+      class="secondary-button"
+      type="button"
+      *ngIf="principalForm.id"
+      (click)="clearForm()"
+    >
+      Cancel
+    </button>
+  </form>
+
+  <!-- Principals Table -->
+  <table
+    class="custom-table"
+    *ngIf="principalsList.length > 0; else noPrincipals"
+  >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Experience (Years)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let principal of principalsList">
+        <td>{{ principal.name }}</td>
+        <td>{{ principal.age }}</td>
+        <td>{{ principal.experience }}</td>
+        <td>
+          <button class="btn edit" (click)="editPrincipal(principal)">
+            Edit
+          </button>
+          <button class="btn delete" (click)="deletePrincipal(principal.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No Data Template -->
+  <ng-template #noPrincipals>
+    <p style="text-align: center; margin-top: 20px">No principals found.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,60 @@
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.school-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.primary-button,
+.secondary-button,
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.secondary-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn.edit {
+  background-color: #ffc107;
+  margin-right: 8px;
+}
+
+.btn.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}

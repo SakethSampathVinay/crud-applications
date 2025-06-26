@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "id": "b444",
+      "name": "Saketh Sampath Vinay",
+      "grade": 10,
+      "age": 19
+    }
+  ],
+  "principal": [
+    {
+      "id": "37c4",
+      "name": "Joe",
+      "age": 45,
+      "experience": 6
+    }
+  ],
+  "school": [
+    {
+      "id": "0c28",
+      "name": "Testing School",
+      "address": "Gachibowli, Hyderabad"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "887f",
+      "firstName": "Saketh Sampath Vinay",
+      "lastName": "Pethakamsetty",
+      "subject": "Instructor & Software Developer",
+      "age": 20
+    }
+  ]
+}

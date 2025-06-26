@@ -1,0 +1,63 @@
+<div class="container">
+  <!-- School Form -->
+  <form
+    (ngSubmit)="schoolsForm.id ? updateSchool() : createSchool()"
+    class="school-form"
+  >
+    <input
+      [(ngModel)]="schoolsForm.name"
+      name="name"
+      placeholder="School Name"
+      required
+      class="input-field"
+    />
+    <input
+      [(ngModel)]="schoolsForm.address"
+      name="address"
+      placeholder="Address"
+      required
+      class="input-field"
+    />
+
+    <button class="primary-button" type="submit">
+      {{ schoolsForm.id ? "Update" : "Add" }} School
+    </button>
+
+    <button
+      class="secondary-button"
+      type="button"
+      *ngIf="schoolsForm.id"
+      (click)="clearForm()"
+    >
+      Cancel
+    </button>
+  </form>
+
+  <!-- Schools Table -->
+  <table class="custom-table" *ngIf="schoolsList.length > 0; else noSchools">
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let school of schoolsList">
+        <td>{{ school.name }}</td>
+        <td>{{ school.address }}</td>
+        <td>
+          <button class="btn edit" (click)="editSchool(school)">Edit</button>
+          <button class="btn delete" (click)="deleteSchool(school.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Fallback message -->
+  <ng-template #noSchools>
+    <p style="text-align: center; margin-top: 20px">No schools found.</p>
+  </ng-template>
+</div>
